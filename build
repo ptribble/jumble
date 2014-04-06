@@ -1,0 +1,40 @@
+#!/bin/sh
+#
+# build jumble
+#
+
+XFLAGS="-Xlint -Xlint:-serial"
+#XFLAGS=""
+
+#
+# run
+# ./build pmd
+# to use this, although this code is noisy enough that it will generate
+# many failures
+#
+PMDCHECKS="imports,unusedcode,typeresolution,coupling,clone,sunsecure,finalizers"
+
+case $1 in
+clean)
+	rm `find uk/co -name '*.class'`
+	rm -fr javadoc
+	exit 0
+	;;
+pmd)
+	pmd uk $PMDCHECKS
+	exit 0
+	;;
+doc)
+    rm -fr javadoc
+    mkdir javadoc
+    javadoc -d javadoc uk.co.petertribble.jumble
+    ;;
+esac
+
+if [ -x /opt/onbld/bin/jstyle ]; then
+    /opt/onbld/bin/jstyle `find uk/co/petertribble/jumble -name '*.java'`
+fi
+
+javac ${XFLAGS} uk/co/petertribble/jumble/*.java
+
+jar cf jumble.jar `find uk/co/petertribble/jumble -name '*.class'`
