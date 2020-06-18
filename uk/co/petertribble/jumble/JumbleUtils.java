@@ -22,36 +22,6 @@ import java.io.*;
 public class JumbleUtils {
 
     /**
-     * Retrieves all the system properties into a <code>String</code>
-     *
-     * @return A <code>String</code> containing all the system properties,
-     * one property per line, with the name and value of each property
-     * separated by " = "
-     */
-    public static String ListSystemProperties() {
-	StringBuilder sb = new StringBuilder();
-	Properties sysprops = System.getProperties();
-	Enumeration eprop = sysprops.propertyNames();
-	while (eprop.hasMoreElements()) {
-	    String k = (String) eprop.nextElement();
-	    sb.append(k).append(" = ");
-	    sb.append(sysprops.getProperty(k)).append("\n");
-	}
-	return sb.toString();
-    }
-
-    /**
-     * Prints all the keys in a <code>Map</code> to the standard output
-     *
-     * @param m A <code>Map</code> whose keys are to be output
-     */
-    public static void printKeys(Map m) {
-	for (Object o : m.keySet()) {
-	    System.out.println("Key: " + o);
-	}
-    }
-
-    /**
      * Sanitizes a file name, replacing undesirable characters with the
      * "_" character.
      *
