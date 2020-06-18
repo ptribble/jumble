@@ -1,8 +1,8 @@
 /*
  * JUMBLE - a collection of miscellaneous non-graphical
- * functions used by  applications
+ * functions used by applications
  *
- * Copyright (C) 2004-20011 Peter C. Tribble
+ * Copyright (C) 2004-2020 Peter C. Tribble
  *
  * You may contact the author by email: peter.tribble@gmail.com
  *
@@ -16,7 +16,7 @@ import java.io.*;
 /**
  * Convenience routines.
  * @author Peter Tribble
- * @version 1.2
+ * @version 1.3
  *
  */
 public class JumbleUtils {
@@ -94,35 +94,6 @@ public class JumbleUtils {
 	    s = new String(cc);
 	} catch (Exception e) { }
 	return s;
-    }
-
-    /**
-     * Converts a <code>String</code> to a property hash. The
-     * <code>String</code> is first broken up using the specified delimiter.
-     * Then the resulting <code>String</code>s are broken up into a key
-     * and value, with the key being anything to the left of the first
-     * '=' character and the value anything that is left over. If no '='
-     * character is present, that <code>String</code> is skipped.
-     *
-     * @param s The <code>String</code> to be broken up.
-     * @param delim The delimiter around which the <code>String</code>
-     * will be broken up
-     *
-     * @return A <code>Hashtable</code> containing the keys and values
-     * specified by the input <code>String</code>
-     */
-    public static Hashtable <String, String> stringToPropHash(
-		String s, String delim) {
-	Hashtable <String, String> h = new Hashtable <String, String> ();
-	StringTokenizer st = new StringTokenizer(s, delim);
-	while (st.hasMoreTokens()) {
-	    String ss = st.nextToken();
-	    int i = ss.indexOf("=");
-	    if (i > -1) {
-		h.put(ss.substring(0, i), ss.substring(i+1));
-	    }
-	}
-	return h;
     }
 
     /**
