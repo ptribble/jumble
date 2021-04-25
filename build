@@ -10,7 +10,7 @@ XFLAGS="-Xlint -Xlint:-serial"
 # new PMD version has rulesets
 #
 PMDRULES="imports typeresolution clone finalizers sunsecure unusedcode braces migrating strictexception unnecessary"
-PMDCATRULES="security"
+PMDCATRULES="security bestpractices"
 
 case $1 in
 clean)
