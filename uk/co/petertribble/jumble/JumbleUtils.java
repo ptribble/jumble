@@ -62,7 +62,7 @@ public class JumbleUtils {
 	    char[] cc = new char[l];
 	    isr.read(cc, 0, l);
 	    s = new String(cc);
-	} catch (Exception e) { }
+	} catch (IOException e) { }
 	return s;
     }
 
@@ -86,7 +86,7 @@ public class JumbleUtils {
 	StringTokenizer st = new StringTokenizer(s, delim);
 	while (st.hasMoreTokens()) {
 	    String ss = st.nextToken();
-	    int i = ss.indexOf("=");
+	    int i = ss.indexOf('=');
 	    if (i > -1) {
 		m.put(ss.substring(0, i), ss.substring(i+1));
 	    }
