@@ -5,7 +5,10 @@
 # build jumble
 #
 
-XFLAGS="-Xlint -Xlint:-serial"
+PATH=/usr/jdk/instances/jdk1.8.0/bin:$PATH
+export PATH
+
+FLAGS="-Xlint -Xlint:-serial"
 #XFLAGS=""
 
 #
