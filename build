@@ -41,10 +41,6 @@ doc|-doc)
     ;;
 esac
 
-if [ -x /opt/onbld/bin/jstyle ]; then
-    /opt/onbld/bin/jstyle `find uk/co/petertribble/jumble -name '*.java'`
-fi
-
 javac -Xlint uk/co/petertribble/jumble/*.java
 
 jar cf jumble.jar `find uk/co/petertribble/jumble -name '*.class'`
