@@ -2,7 +2,7 @@
  * JUMBLE - a collection of miscellaneous non-graphical
  * functions used by applications
  *
- * Copyright (C) 2004-2020 Peter C. Tribble
+ * Copyright (C) 2004-2024 Peter C. Tribble
  *
  * You may contact the author by email: peter.tribble@gmail.com
  *
@@ -19,7 +19,13 @@ import java.io.*;
  * @version 1.3
  *
  */
-public class JumbleUtils {
+public final class JumbleUtils {
+
+    /**
+     * This class cannot be instantiated, or subclassed.
+     */
+    private JumbleUtils() {
+    }
 
     /**
      * Sanitizes a file name, replacing undesirable characters with the
@@ -81,14 +87,14 @@ public class JumbleUtils {
      * @return A <code>Map</code> containing the keys and values
      * specified by the input <code>String</code>
      */
-    public static Map <String, String> stringToPropMap(String s, String delim) {
-	Map <String, String> m = new HashMap <String, String> ();
+    public static Map<String, String> stringToPropMap(String s, String delim) {
+	Map<String, String> m = new HashMap<>();
 	StringTokenizer st = new StringTokenizer(s, delim);
 	while (st.hasMoreTokens()) {
 	    String ss = st.nextToken();
 	    int i = ss.indexOf('=');
 	    if (i > -1) {
-		m.put(ss.substring(0, i), ss.substring(i+1));
+		m.put(ss.substring(0, i), ss.substring(i + 1));
 	    }
 	}
 	return m;
