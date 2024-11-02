@@ -9,7 +9,11 @@
 
 package uk.co.petertribble.jumble;
 
-import java.io.*;
+import java.io.ByteArrayInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
+import java.io.IOException;
 
 /**
  *
@@ -22,6 +26,9 @@ import java.io.*;
  */
 public final class JumbleFile {
 
+    /**
+     * The line separator, used when translating Strings into lines.
+     */
     private static final String NLSEP = System.getProperty("line.separator");
 
     /**
