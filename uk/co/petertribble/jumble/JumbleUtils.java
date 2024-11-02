@@ -28,30 +28,6 @@ public final class JumbleUtils {
     }
 
     /**
-     * Sanitizes a file name, replacing undesirable characters with the
-     * "_" character.
-     *
-     * @param s The filename to be sanitized
-     *
-     * @return The sanitized filename
-     */
-    public static String safeFileName(String s) {
-	char c;
-	int len = s.length();
-	StringBuilder dest = new StringBuilder(len);
-	for (int i = 0; i < len; i++) {
-	    c = s.charAt(i);
-	    if (c == ':' || c == '/' || c == ' ' || c == '>' || c == '<'
-		|| c == ';' || c == '\\') {
-		dest.append('_');
-	    } else {
-		dest.append(c);
-	    }
-	}
-	return dest.toString();
-    }
-
-    /**
      * Reads a <code>String</code> out of a <code>byte</code> array.
      *
      * @param b An array of <code>byte</code>s to be converted to a
