@@ -57,12 +57,10 @@ public final class JumbleFile {
      */
     public static byte[] getByteContents(File f) {
 	byte[] b = null;
-	try {
+	try (FileInputStream fi = new FileInputStream(f)) {
 	    long s = f.length();
 	    b = new byte[(int) s];
-	    FileInputStream fi = new FileInputStream(f);
 	    fi.read(b);
-	    fi.close();
 	} catch (IOException ioe) { }
 	return b;
     }
