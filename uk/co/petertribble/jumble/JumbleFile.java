@@ -17,7 +17,7 @@ import java.io.*;
  * <code>String</code> or arrays of <code>byte</code>s
  *
  * @author Peter Tribble
- * @version 2.0
+ * @version 3.0
  *
  */
 public final class JumbleFile {
@@ -60,6 +60,27 @@ public final class JumbleFile {
 	return b;
     }
 
+    /*
+     * Reads a <code>String</code> out of a <code>byte</code> array.
+     *
+     * @param b An array of <code>byte</code>s to be converted to a
+     * <code>String</code>
+     *
+     * @return The converted <code>String</code>
+     */
+    private static String byteToString(byte[] b) {
+	String s = "";
+	InputStreamReader isr = new InputStreamReader(
+		new ByteArrayInputStream(b));
+	try {
+	    int l = b.length;
+	    char[] cc = new char[l];
+	    isr.read(cc, 0, l);
+	    s = new String(cc);
+	} catch (IOException e) { }
+	return s;
+    }
+
     /**
      * Static utility method to read a file into a <code>String</code>.
      *
@@ -68,7 +89,7 @@ public final class JumbleFile {
      * @return The contents of the file as a <code>String</code>
      */
     public static String getStringContents(File f) {
-	return JumbleUtils.byteToString(getByteContents(f));
+	return byteToString(getByteContents(f));
     }
 
     /**

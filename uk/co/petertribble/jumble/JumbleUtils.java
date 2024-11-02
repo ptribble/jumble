@@ -28,27 +28,6 @@ public final class JumbleUtils {
     }
 
     /**
-     * Reads a <code>String</code> out of a <code>byte</code> array.
-     *
-     * @param b An array of <code>byte</code>s to be converted to a
-     * <code>String</code>
-     *
-     * @return The converted <code>String</code>
-     */
-    public static String byteToString(byte[] b) {
-	String s = "";
-	InputStreamReader isr = new InputStreamReader(
-		new ByteArrayInputStream(b));
-	try {
-	    int l = b.length;
-	    char[] cc = new char[l];
-	    isr.read(cc, 0, l);
-	    s = new String(cc);
-	} catch (IOException e) { }
-	return s;
-    }
-
-    /**
      * Converts a <code>String</code> to a property Map. The
      * <code>String</code> is first broken up using the specified delimiter.
      * Then the resulting <code>String</code>s are broken up into a key
