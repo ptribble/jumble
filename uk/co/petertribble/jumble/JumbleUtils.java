@@ -44,9 +44,7 @@ public final class JumbleUtils {
      */
     public static Map<String, String> stringToPropMap(String s, String delim) {
 	Map<String, String> m = new HashMap<>();
-	StringTokenizer st = new StringTokenizer(s, delim);
-	while (st.hasMoreTokens()) {
-	    String ss = st.nextToken();
+	for (String ss : s.split(delim)) {
 	    int i = ss.indexOf('=');
 	    if (i > -1) {
 		m.put(ss.substring(0, i), ss.substring(i + 1));
