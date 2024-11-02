@@ -50,6 +50,7 @@ public final class JumbleFile {
 
     /**
      * Static utility method to read a file into a <code>byte</code> array.
+     * Returns null in the event of failure.
      *
      * @param f A <code>File</code> to be read.
      *
@@ -75,14 +76,16 @@ public final class JumbleFile {
      */
     private static String byteToString(byte[] b) {
 	String s = "";
-	InputStreamReader isr = new InputStreamReader(
+	if (b != null) {
+	    InputStreamReader isr = new InputStreamReader(
 		new ByteArrayInputStream(b));
-	try {
-	    int l = b.length;
-	    char[] cc = new char[l];
-	    isr.read(cc, 0, l);
-	    s = new String(cc);
-	} catch (IOException e) { }
+	    try {
+		int l = b.length;
+		char[] cc = new char[l];
+		isr.read(cc, 0, l);
+		s = new String(cc);
+	    } catch (IOException e) { }
+	}
 	return s;
     }
 
