@@ -16,8 +16,8 @@ PMDCACHE="${HOME}/.pmd/cache.jumble"
 
 case $1 in
 clean)
-	rm -f `find uk/co -type f -name '*.class'`
-	rm -f `find . -type f -name '*~'`
+	rm -f $(find uk/co -type f -name '*.class')
+	rm -f $(find . -type f -name '*~')
 	rm -fr javadoc
 	exit 0
 	;;
@@ -28,10 +28,10 @@ pmd|-pmd)
 	    RULESETS="${RULESETS},category/java/${RULE}.xml"
 	done
 	RULESETS=${RULESETS/,/}
-	if [ ! -d ${HOME}/.pmd ]; then
-	    mkdir -p ${HOME}/.pmd
+	if [ ! -d "${HOME}/.pmd" ]; then
+	    mkdir -p "${HOME}/.pmd"
 	fi
-	pmd check --cache ${PMDCACHE} -d uk -R $RULESETS --use-version java-1.8 --aux-classpath `echo lib/java/* | sed 's= =:=g'` 2>/dev/null
+	pmd check --cache "${PMDCACHE}" -d uk -R $RULESETS --use-version java-1.8 --aux-classpath $(echo lib/java/* | sed 's= =:=g') 2>/dev/null
 	exit 0
 	;;
 doc|-doc)
@@ -43,4 +43,4 @@ esac
 
 javac -Xlint uk/co/petertribble/jumble/*.java
 
-jar cf jumble.jar `find uk/co/petertribble/jumble -name '*.class'`
+jar cf jumble.jar $(find uk/co/petertribble/jumble -name '*.class')
