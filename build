@@ -23,7 +23,7 @@ clean)
 	rm -fr javadoc
 	exit 0
 	;;
-pmd|-pmd)
+pmd)
 	RULESETS=""
 	for RULE in $PMDCATRULES "$@"
 	do
@@ -36,7 +36,7 @@ pmd|-pmd)
 	pmd check --cache "${PMDCACHE}" -d uk -R $RULESETS --use-version java-1.8 2>/dev/null
 	exit 0
 	;;
-javadoc|-javadoc)
+javadoc)
     rm -fr javadoc
     mkdir javadoc
     javadoc -d javadoc uk.co.petertribble.jumble
