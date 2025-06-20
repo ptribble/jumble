@@ -33,7 +33,7 @@ pmd)
 javadoc)
     rm -fr javadoc
     mkdir javadoc
-    javadoc -d javadoc uk.co.petertribble.jumble
+    javadoc -Xdoclint:all -d javadoc uk.co.petertribble.jumble
     exit 0
     ;;
 esac
