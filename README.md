@@ -6,4 +6,5 @@ The use of any of these classes ought to be thought of as deprecated,
 as the JDK now provides many of these capabilities, whereas they were
 largely missing when Jumble was created.
 
-The files here are licensed under CDDL, version 1.0.
+The files here are licensed under CDDL, version 1.0, see the file
+LICENSES/CDDL-1.0.txt.
