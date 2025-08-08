@@ -36,6 +36,7 @@ spotbugs)
 	#
 	javac -Xlint uk/co/petertribble/jumble/*.java
 	spotbugs -auxclasspath jumble.jar uk
+	rm -f $(find uk/co/petertribble/jumble -type f -name '*.class')
 	exit 0
 	;;
 javadoc)
@@ -49,3 +50,5 @@ esac
 javac -Xlint uk/co/petertribble/jumble/*.java
 
 jar cf jumble.jar $(find uk/co/petertribble/jumble -name '*.class')
+
+rm -f $(find uk/co/petertribble/jumble -type f -name '*.class')
