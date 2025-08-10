@@ -15,6 +15,9 @@ SPDX-License-Identifier: CDDL-1.0
         Jumble custom rules
     </description>
 
+    <rule ref="category/java/design.xml">
+      <exclude name="LoosePackageCoupling"/>
+    </rule>
     <rule ref="category/java/security.xml" />
     <rule ref="category/java/bestpractices.xml" />
     <rule ref="category/java/multithreading.xml">
