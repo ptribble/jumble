@@ -45,7 +45,7 @@ public final class JumbleUtils {
      * @return A <code>Map</code> containing the keys and values
      * specified by the input <code>String</code>
      */
-    public static Map<String, String> fileToPropMap(File f) {
+    public static Map<String, String> fileToPropMap(final File f) {
 	return stringToPropMap(JumbleFile.getStringContents(f));
     }
 
@@ -62,7 +62,7 @@ public final class JumbleUtils {
      * @return A <code>Map</code> containing the keys and values
      * specified by the input <code>String</code>
      */
-    public static Map<String, String> stringToPropMap(String s) {
+    public static Map<String, String> stringToPropMap(final String s) {
 	return stringToPropMap(s, "\n");
     }
 
@@ -81,7 +81,8 @@ public final class JumbleUtils {
      * @return A <code>Map</code> containing the keys and values
      * specified by the input <code>String</code>
      */
-    public static Map<String, String> stringToPropMap(String s, String delim) {
+    public static Map<String, String> stringToPropMap(final String s,
+						      final String delim) {
 	Map<String, String> m = new HashMap<>();
 	for (String ss : s.split(delim)) {
 	    int i = ss.indexOf('=');

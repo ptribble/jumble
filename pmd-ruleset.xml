@@ -33,6 +33,7 @@ SPDX-License-Identifier: CDDL-1.0
       <exclude name="MethodArgumentCouldBeFinal"/>
       <exclude name="ShortVariable"/>
       <exclude name="LocalVariableCouldBeFinal"/>
+      <exclude name="OnlyOneReturn"/>
     </rule>
     <rule ref="category/java/errorprone.xml">
       <exclude name="EmptyCatchBlock"/>
