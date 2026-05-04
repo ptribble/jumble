@@ -21,6 +21,7 @@ import java.io.File;
 
 /**
  * Convenience routines.
+ *
  * @author Peter Tribble
  * @version 1.3
  *

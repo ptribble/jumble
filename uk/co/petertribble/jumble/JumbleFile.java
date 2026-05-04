@@ -23,7 +23,6 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- *
  * Convenience routines for accessing files. Allows for reading a file into a
  * <code>String</code> or a <code>List</code> thereof
  *
