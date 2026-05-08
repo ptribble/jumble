@@ -10,15 +10,15 @@
  * source. A copy of the CDDL is also available via the Internet at
  * http://www.illumos.org/license/CDDL.
  *
- * Copyright 2025 Peter Tribble
+ * Copyright 2026 Peter Tribble
  */
 
 /**
  * Jumble contains a couple of utility static classes. JumbleFile
  * allows you to read a file into an Object or its lines into Strings.
  * JumbleUtils deals with maps of properties.
- * <p>
- * These are generally obsolete, but were written (and used) before Java
+ *
+ * <p>These are generally obsolete, but were written (and used) before Java
  * itself had a convenient way to do these simple operations.
  */
 

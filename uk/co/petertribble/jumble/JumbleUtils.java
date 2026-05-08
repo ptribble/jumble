@@ -10,14 +10,14 @@
  * source. A copy of the CDDL is also available via the Internet at
  * http://www.illumos.org/license/CDDL.
  *
- * Copyright (C) 2004-2024 Peter C. Tribble
+ * Copyright (C) 2004-2026 Peter C. Tribble
  */
 
 package uk.co.petertribble.jumble;
 
+import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
-import java.io.File;
 
 /**
  * Convenience routines.
